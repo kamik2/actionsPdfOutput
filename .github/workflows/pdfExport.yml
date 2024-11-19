@@ -25,5 +25,5 @@ jobs:
           build_html: false
       - uses: actions/upload-artifact@v4
         with:
-          name: crsfNAMEAM ENDE
-          path: /export/crsf.pdf
+          name: crsfPDFDATEI.PDF
+          path: crsf.pdf
