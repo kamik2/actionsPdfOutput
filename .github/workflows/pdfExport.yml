@@ -25,5 +25,5 @@ jobs:
           build_html: false
       - uses: actions/upload-artifact@v3
         with:
-          name: 'crsf.md'
+          name: 'crsf.pdf'
           path: 'export/'
