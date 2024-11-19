@@ -17,7 +17,7 @@ jobs:
       - uses: BaileyJM02/markdown-to-pdf@v1.2.0
         with:
           input_dir: 'crsf.md'
-          output_dir: 'export/'
+          output_dir: 'export'
           images_dir: docs/images
           # for example <img src="./images/file-name.png">
           image_import: ./images
@@ -25,5 +25,6 @@ jobs:
           build_html: false
       - uses: actions/upload-artifact@v4
         with:
-          name: crsf.pdf
-          path: export/crsf.pdf
+          name: 
+          path: crsf.pdf
+          if-no-files-found: echo "no file"
