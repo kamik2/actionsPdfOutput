@@ -1,5 +1,9 @@
 # .github/workflows/pdfExport.yml
 
+env:
+  EXPORT_PATH: ../../export/
+  INPUT_FILE: ../../crsf.md
+
 name: Docs to PDF
 # This workflow is triggered on pushes to the repository.
 on:
@@ -18,8 +22,8 @@ jobs:
       - uses: actions/checkout@v3
       - uses: baileyjm02/markdown-to-pdf@v1
         with:
-          input_dir: crsf.md/
-          output_dir: export
+          input_dir: $INPUT_FILE
+          output_dir: $EXPORT_PATH
           images_dir: /images
           # for example <img src="./images/file-name.png">
           image_import: ./images
@@ -28,4 +32,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: docs
-          path: **/**/crsf.md
+          path: ../../crsf.md
