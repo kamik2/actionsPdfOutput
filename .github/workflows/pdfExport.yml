@@ -1,18 +1,21 @@
 # .github/workflows/pdfExport.yml
 
-env:
-  EXPORT_PATH: ../../export/
-  INPUT_FILE: ../../crsf.md
+
 
 name: Docs to PDF
 # This workflow is triggered on pushes to the repository.
+
+env:
+  EXPORT_PATH: '../../export/'
+  INPUT_FILE: '../../crsf.md'
+  
 on:
   push:
     branches:
       - main
     # Paths can be used to only trigger actions when you have edited certain files, such as a file within the /docs directory
     paths:
-      - 'crsf.md'
+      - $INPUT_FILE
 
 jobs:
   converttopdf:
@@ -32,4 +35,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: docs
-          path: ../../crsf.md
+          path: EXPORT_PATH
