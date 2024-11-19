@@ -25,6 +25,5 @@ jobs:
           build_html: false
       - uses: actions/upload-artifact@v4
         with:
-          name: 
           path: crsf.pdf
-          if-no-files-found: echo "no file"
+          if-no-files-found: warn
